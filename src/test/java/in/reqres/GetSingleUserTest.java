@@ -1,3 +1,8 @@
+/*
+Parameterizing rest assured test cases with data provider
+Reuse request and response specifications
+*/
+
 package in.reqres;
 
 import in.reqres.utils.ConfigManager;
@@ -14,7 +19,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class GetSingleUserTest {
-    private static final String BASE_URL= ConfigManager.getInstance().getString("baseUrl");
+    private static final String BASE_URL = ConfigManager.getInstance().getString("baseUrl");
     private static final String BASE_PATH = "api/users";
 
     private static RequestSpecification requestSpec;
@@ -37,7 +42,6 @@ public class GetSingleUserTest {
 
     @Test(dataProvider = "getSingleUserTestData")
     public void requestSingleUser_validateFirstNameLastName(String id, String firstName, String lastName) {
-
         given().
                 spec(requestSpec)
                 .pathParam("id", id).
