@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="rest assured api test" verbose="1">
+    <test name="reqres api test">
+        <classes>
+            <class name="in.reqres.GetSingleUserTest"></class>
+            <class name="in.reqres.PostUserTest"></class>
+        </classes>
+    </test>
+</suite>
